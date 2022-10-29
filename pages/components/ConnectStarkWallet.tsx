@@ -3,7 +3,7 @@ import { useConnectors, useAccount } from '@starknet-react/core'
 
 function buttonString(addr) {
     if (addr) {
-        return `${addr.slice(0, 4)}...${addr.slice(-2)}`;
+        return `${addr.slice(0, 4)}...${addr.slice(-3)}`;
     }
     return "Connect"
 }
@@ -19,7 +19,7 @@ export default function ConnectStarkWallet({ setStarkAddress }) {
                 <li key={connector.id()}>
                     <button onClick={() => connect(connector)}>
                         {setStarkAddress(address)}
-                        {buttonString(address?.toUpperCase())}
+                        {buttonString(address)}
                     </button>
                 </li>
             ))}

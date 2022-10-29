@@ -19,7 +19,21 @@
 }
 
 .nav ul {
+  padding-inline-start: 0px;
+}
+
+.nav {
+  display: inline;
+}
+
+.nav span {
+  float: right;
   text-align: right;
+}
+
+.nav img {
+  max-width: 160px;
+  margin: 10px 10px 10px 0px;
 }
 
 .nav button {
@@ -37,6 +51,8 @@
 
 .nav button:hover {
   cursor: pointer;
+  font-size: 1.3vw;
+
 }
 
 .footer {

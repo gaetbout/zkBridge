@@ -12,12 +12,15 @@ export default function Home() {
       <Head>
         <title>zkBridge</title>
         <meta name="description" content="Bridge from L2 to L2" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.jpeg" />
       </Head>
       <nav className={styles.nav}>
         <ul>
-          <ConnectStarkWallet setStarkAddress={setStarkAddress} />
-          <ConnectZkSyncWallet setZkSyncAddress={setZkSyncAddress} />
+          <li><img src="name.jpeg" alt="Logo" /></li>
+          <span>
+            <ConnectStarkWallet setStarkAddress={setStarkAddress} />
+            <ConnectZkSyncWallet getZkSyncAddress={getZkSyncAddress} setZkSyncAddress={setZkSyncAddress} />
+          </span>
         </ul>
       </nav>
       <main className={styles.main}>
@@ -43,7 +46,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        Powered by a lot of coffee and candies
+        Powered by coffee and candies
       </footer>
     </div >
   )
