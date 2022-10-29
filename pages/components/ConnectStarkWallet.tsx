@@ -1,19 +1,27 @@
 import { useConnectors, useAccount } from '@starknet-react/core'
 
-export default function ConnectWallet() {
+
+function buttonString(addr) {
+    if (addr) {
+        return `${addr.slice(0, 4)}...${addr.slice(-2)}`;
+    }
+    return "Connect"
+}
+
+
+export default function ConnectStarkWallet() {
     const { connect, connectors } = useConnectors()
     const { address } = useAccount()
 
     return (
-        <ul>
+        <>
             {connectors.map((connector) => (
                 <li key={connector.id()}>
                     <button onClick={() => connect(connector)}>
-                        Connect {connector.id()}
+                        {buttonString(address?.toUpperCase())}
                     </button>
                 </li>
             ))}
-            <p>Account:{address}</p>
-        </ul>
+        </>
     )
 }
