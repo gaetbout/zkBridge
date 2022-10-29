@@ -2,11 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ConnectStarkWallet from './components/ConnectStarkWallet'
 import ConnectZkSyncWallet from './components/ConnectZkSyncWallet'
+import Submit from './components/Submit'
 import { useState } from "react";
 
 export default function Home() {
   const [getStarkAddress, setStarkAddress] = useState('')
   const [getZkSyncAddress, setZkSyncAddress] = useState('')
+  const [getAmount, setAmount] = useState('')
+
   return (
     <div className={styles.container}>
       <Head>
@@ -35,13 +38,14 @@ export default function Home() {
             <br />
             To
             <br />
-            <input type="text" value={getZkSyncAddress} placeholder="To..." />
+            <input type="text" value={getZkSyncAddress}
+              placeholder="To..." />
           </div>
           <div className={styles.skalala}>
             Amount
-            <input type="number" placeholder="0.00" />
+            <input type="number" placeholder="0.00" onChange={event => setAmount(event.target.value)} />
           </div>
-          <button>Submit</button>
+          <Submit getAmount={getAmount} getZkSyncAddress={getZkSyncAddress} />
         </div>
       </main>
 
