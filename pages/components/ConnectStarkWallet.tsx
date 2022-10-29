@@ -3,9 +3,9 @@ import { useConnectors, useAccount } from '@starknet-react/core'
 
 function buttonString(addr) {
     if (addr) {
-        return `${addr.slice(0, 4)}...${addr.slice(-3)}`;
+        return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
     }
-    return "Connect"
+    return "Connect ArgentX"
 }
 
 

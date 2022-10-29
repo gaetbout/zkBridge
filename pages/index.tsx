@@ -12,11 +12,11 @@ export default function Home() {
       <Head>
         <title>zkBridge</title>
         <meta name="description" content="Bridge from L2 to L2" />
-        <link rel="icon" href="/favicon.jpeg" />
+        <link rel="icon" href="fv.png" />
       </Head>
       <nav className={styles.nav}>
         <ul>
-          <li><img src="name.jpeg" alt="Logo" /></li>
+          <li><img src="logo.png" alt="Logo" /></li>
           <span>
             <ConnectStarkWallet setStarkAddress={setStarkAddress} />
             <ConnectZkSyncWallet getZkSyncAddress={getZkSyncAddress} setZkSyncAddress={setZkSyncAddress} />
