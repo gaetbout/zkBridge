@@ -9,7 +9,7 @@ function buttonString(addr) {
 }
 
 
-export default function ConnectStarkWallet() {
+export default function ConnectStarkWallet({ setStarkAddress }) {
     const { connect, connectors } = useConnectors()
     const { address } = useAccount()
 
@@ -18,6 +18,7 @@ export default function ConnectStarkWallet() {
             {connectors.map((connector) => (
                 <li key={connector.id()}>
                     <button onClick={() => connect(connector)}>
+                        {setStarkAddress(address)}
                         {buttonString(address?.toUpperCase())}
                     </button>
                 </li>

@@ -1,11 +1,11 @@
 import { useState } from "react";
 function buttonString(addr) {
     if (addr) {
-        return `${addr.slice(0, 5)}...${addr.slice(-3)}`;
+        return `${addr.slice(0, 4)}...${addr.slice(-2)}`;
     }
     return "Connect"
 }
-export default function ConnectZkSyncWallet() {
+export default function ConnectZkSyncWallet({ setZkSyncAddress }) {
     const [getWalletAddress, setWalletAddress] = useState('')
     return (
         <>
@@ -17,9 +17,10 @@ export default function ConnectZkSyncWallet() {
                         const chainId = await window.ethereum.request({ method: 'eth_chainId' });
                         // Check if user is connected to Mainnet
                         if (chainId != '0x118') {
-                            setWalletAddress("Plz connect to zkSync");
+                            alert("Plz switch to zkSync testnet (280)");
                         } else {
                             let wallet = accounts[0];
+                            setZkSyncAddress(wallet)
                             setWalletAddress(wallet);
                         }
                     } else {

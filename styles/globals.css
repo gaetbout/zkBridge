@@ -10,8 +10,9 @@ body {
 
 * {
   --main-color: hsl(240, 47%, 29%);
-  --secondary-color: hsl(14, 81%, 52%);
-  --secondary-color-hover: hsl(14, 81%, 46%);
+  --main-color-hover: hsl(240, 47%, 22%);
+  --secondary-color: hsl(240, 94%, 73%);
+  --secondary-color-hover: hsl(240, 94%, 67%);
   --font-white-color: hsl(0, 0%, 95%);
   --font-white-color-hover: hsl(0, 0%, 100%);
   box-sizing: border-box;

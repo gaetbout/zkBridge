@@ -2,8 +2,11 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ConnectStarkWallet from './components/ConnectStarkWallet'
 import ConnectZkSyncWallet from './components/ConnectZkSyncWallet'
+import { useState } from "react";
 
 export default function Home() {
+  const [getStarkAddress, setStarkAddress] = useState('')
+  const [getZkSyncAddress, setZkSyncAddress] = useState('')
   return (
     <div className={styles.container}>
       <Head>
@@ -13,32 +16,35 @@ export default function Home() {
       </Head>
       <nav className={styles.nav}>
         <ul>
-          <ConnectStarkWallet />
-          <ConnectZkSyncWallet />
+          <ConnectStarkWallet setStarkAddress={setStarkAddress} />
+          <ConnectZkSyncWallet setZkSyncAddress={setZkSyncAddress} />
         </ul>
       </nav>
       <main className={styles.main}>
-        <a className={styles.card}>
+        <div className={styles.card}>
           <h1 className={styles.title}>
             Welcome to <span className={styles.underline}>zkBridge!</span>
           </h1>
-
-          <input type="text" placeholder="From..." /> ETH
-          <br />
-          <input type="text" placeholder="To..." /> ETH
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <div className={styles.skalala}>
+            From
+            <br />
+            <p>{getStarkAddress}</p>
+            <br />
+            To
+            <br />
+            <input type="text" value={getZkSyncAddress} placeholder="To..." />
+          </div>
+          <div className={styles.skalala}>
+            Amount
+            <input type="number" placeholder="0.00" />
+          </div>
+          <button>Submit</button>
+        </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by a lot of coffee
-        </a>
+        Powered by a lot of coffee and candies
       </footer>
-    </div>
+    </div >
   )
 }

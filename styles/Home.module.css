@@ -1,5 +1,5 @@
 .main {
-  min-height: 78vh;
+  height: 83vh;
   color: var(--font-white-color);
   flex: 1;
   display: flex;
@@ -10,7 +10,7 @@
 
 .container {
   margin: auto;
-  max-width: 80%;
+  max-width: 60%;
   padding: 0 2rem;
 }
 
@@ -23,16 +23,16 @@
 }
 
 .nav button {
-  padding: 20px;
+  padding: 15px 10px;
+  min-width: 160px;
   font-size: 1.5vw;
   background-color: var(--secondary-color);
   border-radius: 10px;
   text-decoration: none;
   color: var(--font-white-color);
   border: 0px;
-  margin: 10px;
+  margin: 10px 0px 10px 10px;
   border-color: var(--secondary-color);
-  transition: all 200ms ease-in;
 }
 
 .nav button:hover {
@@ -40,9 +40,10 @@
 }
 
 .footer {
+  color: var(--font-white-color);
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
@@ -55,13 +56,71 @@
   flex-grow: 1;
 }
 
+.container input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.container input::-webkit-outer-spin-button,
+.container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.container input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .title a {
   text-decoration: none;
+}
+
+.skalala {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: var(--main-color-hover);
+}
+
+.skalala p {
+  overflow: hidden;
+  font-size: 1em !important;
 }
 
 .card:hover .underline {
   text-decoration: underline;
   color: var(--secondary-color);
+}
+
+.card:hover {
+  border-color: var(--secondary-color);
+}
+
+.card button {
+  align-items: center;
+  padding: 15px 10px;
+  width: 100%;
+  font-size: 1.5vw;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--font-white-color);
+  border: 0px;
+  border-color: var(--secondary-color);
+}
+
+.card button:hover {
+  background-color: var(--secondary-color-hover);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--font-white-color);
+  border: 0px;
+  cursor: pointer;
 }
 
 .title {
@@ -81,14 +140,6 @@
   font-size: 1.5rem;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -97,13 +148,12 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 800px;
+  width: 100%
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.card h1 {
+  font-size: 4.5vw;
+  margin: 0 0 5vh 0;
 }
 
 .card p {
