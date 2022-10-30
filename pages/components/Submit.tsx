@@ -2,7 +2,8 @@ import { useAccount, useStarknetExecute } from '@starknet-react/core'
 import { useState, useMemo, useCallback } from 'react'
 
 function Component(getAmount, getZkSyncAddress) {
-    const { address } = useAccount()
+
+    const { address, status } = useAccount();
 
     const calls = [
         {
@@ -22,7 +23,19 @@ function Component(getAmount, getZkSyncAddress) {
                     getZkSyncAddress,
                     getZkSyncAddress],
         }]
-    const { execute } = useStarknetExecute({ calls })
+
+    const { execute, loading, error } = useStarknetExecute({ calls });
+
+    if (error) {
+        return <>
+            <div>Error, please retry</div>
+        </>
+    }
+    if (loading) {
+        return <>
+            <button disabled>Sending {getAmount} ETH to {getZkSyncAddress}</button>
+        </>
+    }
     if (!address) {
         return (
             <>

@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function Home() {
   const [getStarkAddress, setStarkAddress] = useState('')
   const [getZkSyncAddress, setZkSyncAddress] = useState('')
+  const [toZkSync, toggleToZkSync] = useState(true)
   const [getAmount, setAmount] = useState('')
 
   return (
@@ -35,6 +36,11 @@ export default function Home() {
             From
             <br />
             <p>{getStarkAddress}</p>
+            <div className={styles.centered}>
+              <div className={styles.round}>
+                <img className={styles.troll} src="switch.png" alt="switch" />
+              </div>
+            </div>
             <br />
             To
             <br />
